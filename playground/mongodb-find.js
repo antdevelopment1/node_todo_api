@@ -28,12 +28,20 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     // });
 
     // Fetches todo by id
-    db.collection('Todos').find({
-        _id: new ObjectID('5be4d6512af4561085781b35')
-    }).toArray()
-        .then( (docs) => {
-            console.log('Todos');
-            console.log(JSON.stringify(docs, undefined, 2));
+    // db.collection('Todos').find({
+    //     _id: new ObjectID('5be4d6512af4561085781b35')
+    // }).toArray()
+    //     .then( (docs) => {
+    //         console.log('Todos');
+    //         console.log(JSON.stringify(docs, undefined, 2));
+    //     }, (err) => {
+    //         console.log('Unable to fetch todos', err);
+    // });
+
+    // Counts all the todos in Todos collection
+    db.collection('Todos').find({}).count()
+        .then( (count) => {
+            console.log(`Todos count: ${count}`);
         }, (err) => {
             console.log('Unable to fetch todos', err);
     });
