@@ -11,17 +11,21 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
 
     
     // Delete many
-    db.collection('Todos').deleteMany({text: 'Poop'})
-        .then(result => {
-            console.log(result);
-        })
+    // db.collection('Todos').deleteMany({text: 'Poop'})
+    //     .then(result => {
+    //         console.log(result);
+    //     });
 
-    // Delete One
-        db.collection('Todos').deleteOne({text: 'Run'})
-            .then(result => {
-                console.log(result);
-            })
+    // // Delete One
+    //     db.collection('Todos').deleteOne({text: 'Run'})
+    //         .then(result => {
+    //             console.log(result);
+    //         });
     // Find one and delete
+    db.collection('Todos').findOneAndDelete({completed: false})
+            .then(result => {
+                console.log(result)
+            });
 
     
     // client.close();
