@@ -39,9 +39,16 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     // });
 
     // Counts all the todos in Todos collection
-    db.collection('Todos').find({}).count()
+    // db.collection('Todos').find({}).count()
+    //     .then( (count) => {
+    //         console.log(`Todos count: ${count}`);
+    //     }, (err) => {
+    //         console.log('Unable to fetch todos', err);
+    // });
+
+    db.collection('Users').find({name: 'Lauren Wilkerson'}).count()
         .then( (count) => {
-            console.log(`Todos count: ${count}`);
+            console.log(`User count: ${count}`);
         }, (err) => {
             console.log('Unable to fetch todos', err);
     });
