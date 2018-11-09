@@ -10,16 +10,27 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     const db = client.db('TodoApp');
 
     // Fetches all todos from Todos collection
-    db.collection('Todos').find().toArray()
-        .then( (docs) => {
-            console.log('Todos');
-            console.log(JSON.stringify(docs, undefined, 2));
-        }, (err) => {
-            console.log('Unable to fetch todos', err);
-    });
+    // db.collection('Todos').find().toArray()
+    //     .then( (docs) => {
+    //         console.log('Todos');
+    //         console.log(JSON.stringify(docs, undefined, 2));
+    //     }, (err) => {
+    //         console.log('Unable to fetch todos', err);
+    // });
 
-     // Fetches all todos from Todos collection with a todo of completed
-    db.collection('Todos').find({completed: false}).toArray()
+    //  // Fetches all todos from Todos collection with a todo of completed
+    // db.collection('Todos').find({completed: false}).toArray()
+    //     .then( (docs) => {
+    //         console.log('Todos');
+    //         console.log(JSON.stringify(docs, undefined, 2));
+    //     }, (err) => {
+    //         console.log('Unable to fetch todos', err);
+    // });
+
+    // Fetches todo by id
+    db.collection('Todos').find({
+        _id: new ObjectID('5be4d6512af4561085781b35')
+    }).toArray()
         .then( (docs) => {
             console.log('Todos');
             console.log(JSON.stringify(docs, undefined, 2));
