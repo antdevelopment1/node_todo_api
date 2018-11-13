@@ -21,7 +21,6 @@ let Todo = mongoose.model('Todo', {
         default: null
     }
 });
-
 // let newTodo = new Todo({
 //     text: 'Cook dinner'
 // })
@@ -45,4 +44,17 @@ secondTodo.save()
 }, (e) => {
     console.log('Unable to save todo');
 })
+
+
+
+let User = mongoose.model('User', {
+    email: {
+        type: String,
+        // Adds validators
+        required: true,
+        minlength: 1,
+        trim: true
+    }
+})
+
 
