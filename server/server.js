@@ -7,12 +7,15 @@ const {User} = require('./models/user');
 
 let app = express();
 
+// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
 
 app.post('/todos', (req, res) => {
     // This body gets stored by body parser
+    console.log(req.body);
     let todos = new Todos({
         text: req.body.text
     });
