@@ -16,23 +16,23 @@ let Todo = mongoose.model('Todo', {
     }
 });
 
-let newTodo = new Todo({
-    text: 'Cook dinner'
-})
+// let newTodo = new Todo({
+//     text: 'Cook dinner'
+// })
 
 let secondTodo = new Todo({
     text: 'Eat Ice Cream',
-    type: true,
+    completed: true,
     completedAt: 20
 })
 
 // Saves new info to mongo database and save also returns a promise
-newTodo.save()
-    .then((doc) => {
-        console.log('Saved Todo', doc);
-    }, (e) => {
-        console.log('Unable to save todo');
-    })
+// newTodo.save()
+//     .then((doc) => {
+//         console.log('Saved Todo', doc);
+//     }, (e) => {
+//         console.log('Unable to save todo');
+//     })
 
 secondTodo.save()
     .then((doc) => {
