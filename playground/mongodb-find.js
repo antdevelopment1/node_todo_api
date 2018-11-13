@@ -1,13 +1,13 @@
 // const MongoClient = require('mongodb').MongoClient;
-const {MongoClient, ObjectID} = require('mongodb');
+// const {MongoClient, ObjectID} = require('mongodb');
 
-MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
-    { useNewUrlParser: true }
-    if (err) {
-       return  console.log('Unable to connect to database server');
-    }
-    console.log('Connected to server.');
-    const db = client.db('TodoApp');
+// MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
+//     { useNewUrlParser: true }
+//     if (err) {
+//        return  console.log('Unable to connect to database server');
+//     }
+//     console.log('Connected to server.');
+//     const db = client.db('TodoApp');
 
     // Fetches all todos from Todos collection
     // db.collection('Todos').find().toArray()
@@ -47,12 +47,12 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     // });
 
     // Retrieves all users in User collection with the name Lauren Wilkerson
-    db.collection('Users').find({name: 'Lauren Wilkerson'}).toArray()
-        .then( (docs) => {
-            console.log(JSON.stringify(docs, undefined, 2));
-        }, (err) => {
-            console.log('Unable to fetch todos', err);
-    });
+    // db.collection('Users').find({name: 'Lauren Wilkerson'}).toArray()
+    //     .then( (docs) => {
+    //         console.log(JSON.stringify(docs, undefined, 2));
+    //     }, (err) => {
+    //         console.log('Unable to fetch todos', err);
+    // });
 
     // Retrievesthe count from the Users collections with all names that = Lauren Wilkerson
     // db.collection('Users').find({name: 'Lauren Wilkerson'}).count()
@@ -63,4 +63,4 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     // });
     
     // client.close();
-});
+// });

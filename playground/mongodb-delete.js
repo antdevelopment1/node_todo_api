@@ -1,13 +1,13 @@
 // const MongoClient = require('mongodb').MongoClient;
-const {MongoClient, ObjectID} = require('mongodb');
+// const {MongoClient, ObjectID} = require('mongodb');
 
-MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
-    { useNewUrlParser: true }
-    if (err) {
-       return  console.log('Unable to connect to database server');
-    }
-    console.log('Connected to server.');
-    const db = client.db('TodoApp');
+// MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
+//     { useNewUrlParser: true }
+//     if (err) {
+//        return  console.log('Unable to connect to database server');
+//     }
+//     console.log('Connected to server.');
+//     const db = client.db('TodoApp');
 
     
     // Delete many
@@ -26,15 +26,19 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //         .then(result => {
     //             console.log(result)
     //         });
+
+    // Find by name and delete repeated names
     // db.collection('Users').deleteMany({name: 'Lauren Wilkerson'})
     //     .then(result => {
     //         console.log(result);
     //     })
-    db.collection('Users').deleteMany({ _id: new ObjectID('5be4d7d05646e4110d5d3327')})
-        .then(result => {
-            console.log(result);
-        })
+
+    // Find by id and deletes
+//     db.collection('Users').deleteOne({ _id: new ObjectID('5be4d7d05646e4110d5d3327')})
+//         .then(result => {
+//             console.log(JSON.stringify(result, undefined, 2));
+//         })
 
     
-    // client.close();
-});
+//     // client.close();
+// });
