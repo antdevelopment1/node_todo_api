@@ -34,5 +34,10 @@ newTodo.save()
         console.log('Unable to save todo');
     })
 
-
+secondTodo.save()
+    .then((doc) => {
+    console.log('Saved Todo', doc);
+}, (e) => {
+    console.log('Unable to save todo');
+})
 
