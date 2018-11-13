@@ -15,3 +15,15 @@ let Todo = mongoose.model('Todo', {
         type: Number
     }
 });
+
+let newTodo = new Todo({
+    text: 'Cook dinner'
+})
+
+// Saves new info to mongo database and save also returns a promise
+newTodo.save()
+    .then((doc) => {
+        console.log('Saved Todo', doc);
+    }, (e) => {
+        console.log('Unable to save todo');
+    })
