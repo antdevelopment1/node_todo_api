@@ -20,6 +20,12 @@ let newTodo = new Todo({
     text: 'Cook dinner'
 })
 
+let secondTodo = new Todo({
+    text: 'Eat Ice Cream',
+    type: true,
+    completedAt: 20
+})
+
 // Saves new info to mongo database and save also returns a promise
 newTodo.save()
     .then((doc) => {
@@ -27,3 +33,6 @@ newTodo.save()
     }, (e) => {
         console.log('Unable to save todo');
     })
+
+
+
